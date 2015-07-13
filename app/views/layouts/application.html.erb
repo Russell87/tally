@@ -2,14 +2,25 @@
 <html>
 <head>
   <title><%= yield(:title) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">`
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
-<body> 
-<%= render 'layouts/shim' %> 
-<%= render 'layouts/header' %> 
-<%= yield %> 
-<%= render 'layouts/footer' %> 
+<body>
+<%= render 'layouts/header' %>
+<!-- Begin page content -->
+  <div class="container">
+    <div class="page-header">
+      <h1><%= yield(:page_heading) %></h1>
+    </div>
+    <%= yield %>
+    
+  </div>
+</div>
+
+<%= render 'layouts/footer' %>
 </body>
 </html>
