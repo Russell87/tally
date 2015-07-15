@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  
+  resources :users
   
   get 'users/new'
 
   root  'pages#index' 
-  get   'pages/index'
-
   get 'about'     => 'pages#about'
   get 'contact'   => 'pages#contact'
   get 'signup'    => 'users#new'
