@@ -1,8 +1,18 @@
 <% content_for :title do %>
 <%= "Tally | " %> <%= @user.name %>
 <% end %>
-<!-- Show the page heading with the possessive user name --> 
+<!-- Show the page heading with the capitalized possessive user name --> 
 <% content_for :page_heading do %> 
-
+<%= @user.name.titleize.possessive %>
 <%= "Dashboard" %>
 <% end %>
+
+<!-- Show (render) all of the goals and paginate them if the user has any -->
+    <% if @user.goals.any? %>
+      <h3>Goals (<%= @user.goals.count %>)</h3>
+      <ol>
+        <%= render @goals %>
+      </ol>
+      <%= will_paginate @goals%>
+    <% end %>
+  </div>
