@@ -9,7 +9,9 @@
 
 <!-- Show (render) all of the goals and paginate them if the user has any -->
     <% if @user.goals.any? %>
-      <h3>Goals (<%= @user.goals.count %>)</h3>
+      <h3>Total Goals (<%= @user.goals.count %>)</h3>
+      <!-- Show amount of completed goals -->
+      <h5>Completed Goals (<%= @user.goals.select {|r| r.completed}.size %>) </h5>
       <ol>
         <%= render @goals %>
       </ol>
