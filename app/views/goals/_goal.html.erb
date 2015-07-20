@@ -1,4 +1,6 @@
-<h4><%= goal.name %></h4>
+<h4><%= goal.name %> | Started about <%= time_ago_in_words(goal.created_at) + ' ago' %></h4> 
+<%= goal.id %>
+    <%= link_to "mark complete", edit_goal_path(goal), data: {confirm: "Mark Complete?" } %> |
+<%= link_to "delete", goal, method: :delete, data: { confirm: "Confirm Deletion" } %>
 
 <p><%= goal.description %></p>
-
