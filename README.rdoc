@@ -6,9 +6,9 @@ The objective is simple: a time management application that helps you track your
 
 == Resources
 
-* [Michael Hartl's Rails Tutorial](https://www.railstutorial.org/)
-* [Rails Guides](http://guides.rubyonrails.org)
-* [Slash Rocket Slack](https://slashrocket.slack.com)
+* (Michael Hartl's Rails Tutorial)[https://www.railstutorial.org/]
+* (Rails Guides)[http://guides.rubyonrails.org]
+* (Slash Rocket Slack)[https://slashrocket.slack.com]
 
 == Copyright
 Copyright © 2015 Russell Christensen. See LICENSE for details.
