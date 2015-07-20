@@ -1,8 +1,7 @@
-<%= form_for(@goal) do |f| %>
-  
-  <div class="field">
-    <%= f.text_field :name, placeholder: "Goal name" %>
-    <%= f.text_area :description, placeholder: "Description (optional)" %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+<%= form_for(@goal)  do |f| %>
+    <p><%= f.text_field :name, placeholder: "Goal name" %> </p>
+    <p><%= f.text_area :description, placeholder: "Description (optional)" %></p>
+  <%= f.submit "Submit Goal", class: "btn btn-primary btn-xs" %>
 <% end %>
+
+

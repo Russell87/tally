@@ -1,6 +1,7 @@
 <% content_for :title do %>
-<%= "Tally | " %> <%= @user.name %>
+<%= "Tally | " %> <%= @user.name.titleize %>
 <% end %>
+
 <!-- Show the page heading with the capitalized possessive user name --> 
 <% content_for :page_heading do %> 
 <%= @user.name.titleize.possessive %>
@@ -9,7 +10,7 @@
 
 <!-- Show (render) all of the goals and paginate them if the user has any -->
     <% if @user.goals.any? %>
-      <h3>Total Goals (<%= @user.goals.count %>)</h3>
+      <h3>Total Goals <span class="badge badge-success"><%= @user.goals.count %></span></h3>
       <!-- Show amount of completed goals -->
       <h5>Completed Goals (<%= @user.goals.select {|r| r.completed}.size %>) </h5>
       <ol>
@@ -17,4 +18,4 @@
       </ol>
       <%= will_paginate @goals%>
     <% end %>
-  </div>
+  

@@ -11,7 +11,7 @@ class GoalsController < ApplicationController
         @goal = current_user.goals.build(goals_params)
             if @goal.save
                 flash[:success] = "Your goal has been successfully saved."
-                redirect_to root_url
+                redirect_to current_user
             else
                 render root_url
             end    
@@ -28,7 +28,7 @@ class GoalsController < ApplicationController
           @goal = Goal.find(params[:id])
             if @goal.update_attribute(:completed, true)
                 flash[:success] = "Your goal has been completed. Good job!"
-                redirect_to root_url
+                redirect_to current_user
             else
                 render @user
             end
