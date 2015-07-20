@@ -1,0 +1,11 @@
+<%= content_for :title, "Tally | New Goal" %>
+<%= content_for :page_heading, "New Goal" %>
+
+<!-- For security, check if they are logged in first. -->
+
+<% if logged_in? %>
+  <%= render 'form' %>
+    <% else %>
+<%= "It doesn't look like you are logged in. Please log in" %>
+<% end %>
+
