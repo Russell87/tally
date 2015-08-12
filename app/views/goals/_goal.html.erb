@@ -5,7 +5,7 @@
 </blockquote>
 
 <small>Started about <%= time_ago_in_words(goal.created_at) + ' ago' %></small> <br>
-
+<%= link_to "edit", edit_goal_path(goal), class: "btn btn-info btn-xs" %>
 <%= link_to "mark complete", edit_goal_path(goal), data: {confirm: "Mark Complete?" }, class: "btn btn-success btn-xs" %>
 <%= link_to "delete", goal, method: :delete, data: { confirm: "Confirm Deletion" }, class: "btn btn-danger btn-xs" %>
 <hr>

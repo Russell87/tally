@@ -25,19 +25,19 @@ class GoalsController < ApplicationController
     
        
     def edit
-          @goal = Goal.find(params[:id])
-            if @goal.update_attribute(:completed, true)
-                flash[:success] = "Your goal has been completed. Good job!"
-                redirect_to current_user
-            else
-                render @user
-            end
+       @goal = Goal.find(params[:id])
     end
     
-    
-
-    
-    
+    def update
+        @goal = Goal.current_user.find(params[:id])
+        if @goal.update(goals_params)
+            flash[:succes] = "Your goal has been edited" 
+            redirect_to current_user
+        else
+            render 'edit'
+        end
+    end
+        
     private
 
     def goals_params
