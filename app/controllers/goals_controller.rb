@@ -29,7 +29,7 @@ class GoalsController < ApplicationController
     end
     
     def update
-        @goal = Goal.current_user.find(params[:id])
+        @goal = Goal.find(params[:id])
         if @goal.update(goals_params)
             flash[:succes] = "Your goal has been edited" 
             redirect_to current_user

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
   
   resources :users
-  resources :goals, only: [:create, :edit, :destroy]
+  resources :goals, only: [:create, :edit, :destroy, :update]
   
 
   # The priority is based upon order of creation: first created -> highest priority.
